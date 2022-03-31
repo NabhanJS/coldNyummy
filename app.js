@@ -15,22 +15,24 @@ app.get("/", (req, res) => {
 
 app.post("/sendChosenIcecream", async (req, res) => {
   const { name, email, getSingleIcecream } = req.body;
-  // console.log(req.body);
   const userData = await User.create({
     name,
     email,
     chosenIcecream: getSingleIcecream,
   });
-
-  // console.log(userData);
   res.redirect("/");
 });
 
 app.get("/getTop", async (req, res) => {
-  const topList = await User.findAll({ attributes: ["name", "email"] });
+  const topList = await User.findAll({
+    attributes: ["name", "email", "chosenIcecream"],
+  });
   console.log(topList);
-  // res.send(topList);
   res.render("topList", { topList });
+});
+
+app.get("/goToMainPage", (req, res) => {
+  res.redirect("/");
 });
 
 User.sync({ force: true }).then(() => {

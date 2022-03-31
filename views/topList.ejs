@@ -6,8 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <% for(let department of topList){ %>
-    <h1 value="<%=department.department_id %>"><%= department.name %></h1>
+    <% for(let list of topList){ %>
+    <h1 value="<%=list.list_id %>"></h1><%= list.chosenIcecream %></h1>
     <% } %>
+
+    <form action="/goToMainPage">
+        <button type="submit"> GO BACK TO MAIN PAGE</button>
+    </form>
   </body>
 </html>
