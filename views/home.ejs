@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div>
+        <label for=""> VOTE FOR YOUR FAVOURITE ICECREAM </label>
+      </div>
+
+      <div>
+        <form action="/sendChosenIcecream" method="POST">
+          <input type="text" name="name" placeholder="Enter your name" />
+          <input type="text" name="email" placeholder="Enter your email" />
+
+          <select name="getSingleIcecream" id="">
+            <option value="iceCream1">Ice cream 1</option>
+            <option value="iceCream2">Ice cream 2</option>
+            <option value="iceCream3">Ice cream 3</option>
+          </select>
+
+          <button type="submit">VOTE</button>
+        </form>
+      </div>
+
+      <form action="getTop">
+        <button type="submit">CHECK TOP</button>
+      </form>
+    </div>
+  </body>
+</html>
