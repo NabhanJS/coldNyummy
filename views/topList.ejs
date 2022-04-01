@@ -4,14 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body>
-    <% for(let list of topList){ %>
-    <h1 value="<%=list.list_id %>"></h1><%= list.chosenIcecream %></h1>
-    <% } %>
 
-    <form action="/goToMainPage">
-        <button type="submit"> GO BACK TO MAIN PAGE</button>
-    </form>
+  <body>
+    <nav>
+      <label class="logo">COLD & YUMMY</label>
+      <ul>
+        <li>
+          <form action="/">
+            <button type="submit">HOME</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <h3>MOST FAVORIT FLAVOR</h3>
+      <ol>
+        <% for(let list of topList){ %>
+        <!-- <li value="<%=list.list_id %>"></li> -->
+        <li><%= list.chosenIcecream %></li>
+        <% } %>
+      </ol>
+    </div>
   </body>
 </html>

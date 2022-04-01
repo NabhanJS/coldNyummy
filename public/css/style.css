@@ -10,27 +10,16 @@ body {
   background-size: cover;
 }
 
-.main,
-.error {
+.main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(178, 235, 132);
-  width: 50%;
-  margin: 0 auto;
-}
-
-.error {
-  padding: 1rem;
-}
-
-.main div {
-  padding: 2rem;
 }
 
 nav {
   background: #73ced1;
+  height: 80px;
   width: 50%;
   display: flex;
   flex-direction: row;

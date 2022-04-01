@@ -5,31 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="/js/script.js"></script>
   </head>
+
   <body>
+    <nav>
+      <label class="logo">COLD & YUMMY</label>
+      <ul>
+        <button><a href="#">HOME</a></button>
+        <li>
+          <form action="getTop">
+            <button type="submit">CHECK TOP</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+
     <div class="main">
       <div>
-        <label for=""> VOTE FOR YOUR FAVOURITE ICECREAM </label>
+        <h3 for="">VOTE FOR YOUR FAVOURITE FLAVOR</h3>
       </div>
 
       <div>
         <form action="/sendChosenIcecream" method="POST">
-          <input type="text" name="name" placeholder="Enter your name" />
-          <input type="text" name="email" placeholder="Enter your email" />
+          <input
+            required
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+          />
+          <input
+            required
+            type="text"
+            name="email"
+            placeholder="Enter your email"
+          />
 
-          <select name="getSingleIcecream" id="">
+          <select class="select" name="getSingleIcecream" id="">
             <option value="iceCream1">Ice cream 1</option>
             <option value="iceCream2">Ice cream 2</option>
             <option value="iceCream3">Ice cream 3</option>
+            <option value="iceCream3">Ice cream 4</option>
+            <option value="iceCream3">Ice cream 5</option>
           </select>
 
           <button type="submit">VOTE</button>
         </form>
       </div>
-
-      <form action="getTop">
-        <button type="submit">CHECK TOP</button>
-      </form>
     </div>
   </body>
 </html>
