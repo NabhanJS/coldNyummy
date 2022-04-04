@@ -20,12 +20,16 @@
     </nav>
 
     <div class="main">
-      <h3>MOST FAVORIT FLAVOR</h3>
-      <ol>
-        <% for(let list of topList){ %>
-        <li><%= list[0]%> : <%= list[1]%></li>
-        <% } %>
-      </ol>
+      <div class="favorit">
+        <h3>MOST FAVORIT FLAVOR</h3>
+      </div>
+      <div>
+        <ol>
+          <% for(let list of topList){ %>
+          <li><%= list[0]%> : <%= list[1]%></li>
+          <% } %>
+        </ol>
+      </div>
     </div>
   </body>
 </html>

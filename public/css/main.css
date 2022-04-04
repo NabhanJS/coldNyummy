@@ -6,7 +6,7 @@
 
 body {
   display: grid;
-  background-image: url(../img/1.jpeg);
+  background-image: url(../img/body.jpeg);
   background-size: cover;
 }
 
@@ -16,9 +16,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(178, 235, 132);
+  background-color: #93dee1;
   width: 50%;
   margin: 0 auto;
+}
+
+select {
+  border: 1px solid blue;
+}
+
+input {
+  padding: 0.2rem;
+  border: 1px solid blue;
 }
 
 .error {
@@ -51,6 +60,10 @@ nav ul li {
   margin: 0 5px;
 }
 
+.favorit {
+  padding: 1rem;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -62,7 +75,7 @@ nav ul li {
 
 img {
   width: 10rem;
-  height: 5rem;
+  height: 6rem;
   border: 2px solid #73ced1;
 }
 

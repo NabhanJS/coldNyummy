@@ -39,3 +39,19 @@ nav ul li {
   line-height: 80px;
   margin: 0 5px;
 }
+
+.favorit {
+  padding: 1rem;
+}
+
+ol {
+  background: #73ced1;
+  padding: 20px;
+}
+
+ol li {
+  background: #73ced1;
+  color: darkred;
+  padding: 5px;
+  margin-left: 35px;
+}

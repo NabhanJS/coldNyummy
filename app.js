@@ -1,7 +1,7 @@
 const express = require("express");
 const sequelize = require("./database/database");
 const { User, Smaker } = require("./User");
-const { items } = require("./database/test");
+const { items } = require("./database/items");
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.post("/sendChosenIcecream", async (req, res) => {
       email,
       chosenIcecream: getSingleIcecream,
     });
-    res.redirect("/");
+    res.render("thanks");
   } else {
     res.render("error");
   }
@@ -37,15 +37,15 @@ app.get("/getTop", async (req, res) => {
     attributes: ["name", "email", "chosenIcecream"],
   });
 
-  const testObj = {};
+  const countData = {};
   for (let user of users) {
-    if (testObj[user.chosenIcecream]) {
-      testObj[user.chosenIcecream]++;
+    if (countData[user.chosenIcecream]) {
+      countData[user.chosenIcecream]++;
     } else {
-      testObj[user.chosenIcecream] = 1;
+      countData[user.chosenIcecream] = 1;
     }
   }
-  const topList = Object.entries(testObj);
+  const topList = Object.entries(countData);
   topList.sort((a, b) => b[1] - a[1]);
   console.log(topList);
 
