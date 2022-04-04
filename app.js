@@ -1,10 +1,11 @@
 const express = require("express");
 const sequelize = require("./database/database");
 const { User, Smaker } = require("./User");
+const { items } = require("./database/test");
 
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
@@ -12,7 +13,7 @@ app.set("view engine", "ejs");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("home", { items });
 });
 
 app.post("/sendChosenIcecream", async (req, res) => {
@@ -24,7 +25,6 @@ app.post("/sendChosenIcecream", async (req, res) => {
       name,
       email,
       chosenIcecream: getSingleIcecream,
-      smakerId: Smaker.id,
     });
     res.redirect("/");
   } else {
@@ -33,9 +33,22 @@ app.post("/sendChosenIcecream", async (req, res) => {
 });
 
 app.get("/getTop", async (req, res) => {
-  const topList = await User.findAll({
+  const users = await User.findAll({
     attributes: ["name", "email", "chosenIcecream"],
   });
+
+  const testObj = {};
+  for (let user of users) {
+    if (testObj[user.chosenIcecream]) {
+      testObj[user.chosenIcecream]++;
+    } else {
+      testObj[user.chosenIcecream] = 1;
+    }
+  }
+  const topList = Object.entries(testObj);
+  topList.sort((a, b) => b[1] - a[1]);
+  console.log(topList);
+
   res.render("topList", { topList });
 });
 

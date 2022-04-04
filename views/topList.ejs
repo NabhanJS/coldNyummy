@@ -23,8 +23,7 @@
       <h3>MOST FAVORIT FLAVOR</h3>
       <ol>
         <% for(let list of topList){ %>
-        <!-- <li value="<%=list.list_id %>"></li> -->
-        <li><%= list.chosenIcecream %></li>
+        <li><%= list[0]%> : <%= list[1]%></li>
         <% } %>
       </ol>
     </div>

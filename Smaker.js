@@ -17,4 +17,7 @@
 //   }
 // );
 
+// Smaker.hasMany(User, { as: "user" });
+// User.belongsTo(Smaker, { as: "icecream" });
+
 // module.exports = { Smaker };

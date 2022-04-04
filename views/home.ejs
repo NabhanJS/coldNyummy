@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/main.css" />
-    <script src="/js/script.js"></script>
   </head>
 
   <body>
@@ -42,15 +41,28 @@
           />
 
           <select class="select" name="getSingleIcecream" id="">
-            <option value="iceCream1">Ice cream 1</option>
-            <option value="iceCream2">Ice cream 2</option>
-            <option value="iceCream3">Ice cream 3</option>
-            <option value="iceCream3">Ice cream 4</option>
-            <option value="iceCream3">Ice cream 5</option>
+            <option value="Mango Cats">Mango Cats</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Sour Shrimp">Sour Shrimp</option>
+            <option value="Candy cream">Candy cream</option>
+            <option value="Perfect Pear">Perfect Pear</option>
+            <option value="Death Bean">Death Bean</option>
           </select>
 
           <button type="submit">VOTE</button>
         </form>
+      </div>
+
+      <div class="products">
+        <% for (let item of items){ %>
+        <article class="item">
+          <figure>
+            <img src="<%= item.image %>" alt="" />
+          </figure>
+          <h3><%= item.name %></h3>
+        </article>
+
+        <% } %>
       </div>
     </div>
   </body>
